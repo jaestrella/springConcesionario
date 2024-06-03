@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[${venta.cod_venta ne null ? 'Editar venta' : 'Registro de venta'}]]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="row justify-content-center">
+        <div class="col-md6 col-lg-4">
+            <br>
+            <h3>[[${venta.cod_venta ne null ? 'Editar venta' : 'Registro de venta'}]]</h3>
+            <br>
+            <form action="" method="post" th:object="${venta}">
+                <div class="mb-3">
+                    <label for="matricula">MATRICULA : </label>
+                    <input id="matricula" type="text" placeholder="Introduzca la matricula" th:field="*{matricula}"
+                        class="form-control" th:errorClass="is-invalid">
+                </div>
+                <div class="mb-3">
+                    <label for="marca">MARCA : </label>
+                    <input id="marca" type="text" placeholder="Introduzca la marca"
+                        th:field="*{marca}" class="form-control" th:errorClass="is-invalid">
+                </div>
+                <div class="mb-3">
+                    <label for="modelo">MODELO : </label>
+                    <input id="modelo" type="text" placeholder="Introduzca el modelo" th:field="*{modelo}"
+                        class="form-control" th:errorClass="is-invalid">
+                </div>
+                <div class="mb-3">
+                    <label for="dni">DNI : </label>
+                    <input id="dni" type="text" placeholder="Introduzca el dni" th:field="*{dni}"
+                        class="form-control" th:errorClass="is-invalid">
+                </div>
+                <div class="mb-3">
+                    <label for="nombre">NOMBRE : </label>
+                    <input id="nombre" type="text" placeholder="Introduzca el nombre" th:field="*{nombre}"
+                        class="form-control" th:errorClass="is-invalid">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono">TELEFONO : </label>
+                    <input id="telefono" type="text" placeholder="Introduzca el telefono" th:field="*{telefono}"
+                        class="form-control" th:errorClass="is-invalid">
+                </div>
+                <div class="mb-3">
+                    <label for="precio">PRECIO : </label>
+                    <input id="precio" type="number" step="0.01" min="0.01" placeholder="Introduzca el precio" th:field="*{precio}"
+                        class="form-control" th:errorClass="is-invalid">
+                </div>
+                <div class="mb-3">
+                    <label for="fecha_venta">FECHA : </label>
+                    <input id="fecha_venta" type="text" placeholder="Introduzca la fecha" th:field="*{fecha_venta}"
+                        class="form-control" th:errorClass="is-invalid">
+                </div>
+
+                <div class="text-end">
+                    <button class="btn btn-success"><i class="fas fa-save"></i>
+                        &nbsp;Guardar
+                    </button>
+                    <a href="/" class="btn btn-light ms-2"><i class="fas fa-backward"></i>&nbsp;Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
